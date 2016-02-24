@@ -668,11 +668,11 @@ class spmatrix(object):
         m, n = self.shape
 
         # Mimic numpy's casting.
-        if np.issubdtype(self.dtype, np.float_):
-            res_dtype = np.float_
-        elif (np.issubdtype(self.dtype, np.int_) or
+        if np.issubdtype(self.dtype, np.floating):
+            res_dtype = np.floating
+        elif (np.issubdtype(self.dtype, np.integral) or
               np.issubdtype(self.dtype, np.bool_)):
-                res_dtype = np.int_
+                res_dtype = np.integral
         elif np.issubdtype(self.dtype, np.complex_):
             res_dtype = np.complex_
         else:
@@ -698,10 +698,10 @@ class spmatrix(object):
         average over both rows and columns, returning a scalar.
         """
         # Mimic numpy's casting.
-        if (np.issubdtype(self.dtype, np.float_) or
+        if (np.issubdtype(self.dtype, np.floating) or
                 np.issubdtype(self.dtype, np.integer) or
                 np.issubdtype(self.dtype, np.bool_)):
-            res_dtype = np.float_
+            res_dtype = np.floating
         elif np.issubdtype(self.dtype, np.complex_):
             res_dtype = np.complex_
         else:
